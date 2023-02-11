@@ -46,8 +46,8 @@ public class ScooterDropListTest {
         }
     @Before
     public void setUp() {
-        //driver = new ChromeDriver();
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
+        //driver = new FirefoxDriver();
     }
     @Test
     public void checkDropListTexts(){
@@ -56,7 +56,7 @@ public class ScooterDropListTest {
         MainPage mainDropListPage = new MainPage(driver);
         mainDropListPage.waitForLoading();//ждем загрузки страницы
         mainDropListPage.clickOnCookies(); //клик по кукам
-        String actualDropListText = mainDropListPage.isTextMatch(popupButton, popupText, expectedText);
+        String actualDropListText = mainDropListPage.getTextFromDropList(popupButton, popupText, expectedText);
         Assert.assertEquals(expectedText, actualDropListText);//проверка соответствия текстов
 
     }

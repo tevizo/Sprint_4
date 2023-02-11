@@ -134,7 +134,7 @@ public class MainPage {
 
 
     //метод возвращает true, если тексты из выпадающих списков соответствуют ожидаемым
-    public String isTextMatch(String newDropButton, String newDropText, String newExpectedText){
+    public String getTextFromDropList(String newDropButton, String newDropText, String newExpectedText){
         //скроллим до элемента
         WebElement element = driver.findElement(By.xpath(newDropButton));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);

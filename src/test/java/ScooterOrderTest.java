@@ -17,8 +17,8 @@ public class ScooterOrderTest {
 
     @Before
     public void setUp() {
-        //driver = new ChromeDriver();
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
+        //driver = new FirefoxDriver();
     }
 
 //Тестовый сценарий по оформлению заказа
