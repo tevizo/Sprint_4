@@ -1,4 +1,3 @@
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -135,7 +134,7 @@ public class MainPage {
 
 
     //метод возвращает true, если тексты из выпадающих списков соответствуют ожидаемым
-    public boolean isTextMatch(String newDropButton, String newDropText, String newExpectedText){
+    public String isTextMatch(String newDropButton, String newDropText, String newExpectedText){
         //скроллим до элемента
         WebElement element = driver.findElement(By.xpath(newDropButton));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
@@ -145,8 +144,8 @@ public class MainPage {
         //жмем на кнопку выпадающего списка
         driver.findElement(By.xpath(newDropButton)).click();
         //помещаем логику в переменную, которая получит текст и сравнит его с ожидаемым результатом
-        String testText = driver.findElement(By.xpath(newDropText)).getText();
-        Assert.assertEquals(testText, newExpectedText);
-        return true;
+        String testActualText = driver.findElement(By.xpath(newDropText)).getText();
+       return testActualText;
+
     }
 }
