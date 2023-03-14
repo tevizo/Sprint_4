@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class MainPage {
@@ -133,8 +134,8 @@ public class MainPage {
     }
 
 
-    //метод возвращает true, если тексты из выпадающих списков соответствуют ожидаемым
-    public String getTextFromDropList(String newDropButton, String newDropText, String newExpectedText){
+    //метод возвращает текст из попапа
+    public String getTextFromDropList(String newDropButton, String newDropText){
         //скроллим до элемента
         WebElement element = driver.findElement(By.xpath(newDropButton));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);

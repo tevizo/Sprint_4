@@ -7,6 +7,7 @@ import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 @RunWith(Parameterized.class)
 public class ScooterDropListTest {
@@ -44,10 +45,12 @@ public class ScooterDropListTest {
                 { ".//div[@id='accordion__heading-7']", "//*[@id='accordion__panel-7']", expectedDropText8},
         };
         }
+
     @Before
     public void setUp() {
-        driver = new ChromeDriver();
-        //driver = new FirefoxDriver();
+
+        //driver = new ChromeDriver();
+        driver = new FirefoxDriver();
     }
     @Test
     public void checkDropListTexts(){
@@ -56,7 +59,7 @@ public class ScooterDropListTest {
         MainPage mainDropListPage = new MainPage(driver);
         mainDropListPage.waitForLoading();//ждем загрузки страницы
         mainDropListPage.clickOnCookies(); //клик по кукам
-        String actualDropListText = mainDropListPage.getTextFromDropList(popupButton, popupText, expectedText);
+        String actualDropListText = mainDropListPage.getTextFromDropList(popupButton, popupText);
         Assert.assertEquals(expectedText, actualDropListText);//проверка соответствия текстов
 
     }

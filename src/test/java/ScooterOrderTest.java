@@ -5,18 +5,20 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 import static org.hamcrest.CoreMatchers.containsString;
 
 
-public class ScooterOrderTest {
+public class ScooterOrderTest<java> {
     private WebDriver driver;
     private static final String PAGE_URL = "https://qa-scooter.praktikum-services.ru/";
     private static final String EXPECTED_CONFIRMATION_TEXT = "Заказ оформлен";
 
     @Before
     public void setUp() {
+
         driver = new ChromeDriver();
         //driver = new FirefoxDriver();
     }
